@@ -12,9 +12,10 @@ const app=express()
 const PORT=process.env.PORT
 const MONGO_URL=process.env.MONGO_URL
 const ORIGIN_URL=process.env.ORIGIN_URL
+const BASE_URL=process.env.BASE_URL
 
 app.use(cors({
-    origin:["http://localhost:5173", "https://stock-management-backend-h7hk.onrender.com"],
+    origin:[ORIGIN_URL,BASE_URL],
     allowedHeaders:['Content-Type']
 }))
 

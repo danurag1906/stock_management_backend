@@ -13,12 +13,12 @@ const PORT=process.env.PORT
 const MONGO_URL=process.env.MONGO_URL
 const ORIGIN_URL=process.env.ORIGIN_URL
 
-app.use(express.json())
-
 app.use(cors({
-    origin:ORIGIN_URL,
+    origin:["http://localhost:5173", "https://stock-management-backend-h7hk.onrender.com"],
     allowedHeaders:['Content-Type']
 }))
+
+app.use(express.json())
 
 app.get('/',(req,res)=>{
     console.log(req);
